@@ -47,7 +47,14 @@ Cosumar est un acteur clé dans la production de sucre au Maroc. Afin d'optimise
 ### Conclusion
 
 Ce projet constitue une avancée stratégique pour Cosumar, en lui permettant d'optimiser ses ressources et de prendre des décisions basées sur des données concrètes pour le développement de la culture de betteraves sucrières au Maroc. En identifiant les terres les plus appropriées et en établissant des partenariats avec des exploitations agricoles qualifiées, Cosumar pourra maximiser sa production tout en minimisant les risques financiers.
-![Screenshot 2024-11-02 214013](https://github.com/user-attachments/assets/e7faae85-2632-40c4-8729-e4fac2748155)
+
+![image](https://github.com/user-attachments/assets/0b459344-8201-4c7b-aea9-5dd65f9c2608)
+![image](https://github.com/user-attachments/assets/2a7f1136-cc37-49ba-98af-6916d7884ea7)
+![image](https://github.com/user-attachments/assets/ec71cd43-78b6-48d2-9380-29729c62cd22)
+![image](https://github.com/user-attachments/assets/e7f4536e-838f-4286-8f05-fd0b69663224)
+
+
+
 
 
 
