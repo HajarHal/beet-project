@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+   <title>ECO HTML</title>
+   <!-- CSS FILES START -->
+   <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='css/color.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='css/prettyPhoto.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='css/all.min.css') }}" rel="stylesheet">
+   <!-- CSS FILES End -->
+</head>
+
+<body>
+   <div class="wrapper">
+      <!--Header Start-->
+      <header class="header-style-2">
+         <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html"><img src="{{ url_for('static', filename='images/h2logo.png') }}" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav mr-auto">
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="index.html"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> About Us </a>
+                     
+                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="{{ url_for('visualisation') }}">Visualisations</a> </li>
+            
+         </nav>
+      </header>
+      <div id="search">
+         <button type="button" class="close">×</button>
+         <form class="search-overlay-form">
+            <input type="search" value="" placeholder="type keyword(s) here" />
+            <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+         </form>
+      </div>
+      <!--Header End-->
+      <!--Inner Header Start-->
+      <section class="wf100 p100 inner-header">
+         <div class="container" style="text-align: center;">
+            <h1>Get Online Predictions</h1>
+         </div>
+         
+         <section class="wf100 p80">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-12">
+                     <div class="myaccount-form">
+                        <h3>Soil Suitability Prediction</h3>
+                        <form id="prediction-form" method="POST" action="/predict">
+                           <div class="form-row">
+                              <div class="form-group col-md-6">
+                                 <input type="number" id="clay" name="clay" class="form-control" placeholder="Enter Clay Percentage" required value="{{ request.form.clay }}">
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <input type="number" id="sand" name="sand" class="form-control" placeholder="Enter Sand Percentage" required value="{{ request.form.sand }}">
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <input type="number" id="silt" name="silt" class="form-control" placeholder="Enter Silt Percentage" required value="{{ request.form.silt }}">
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <input type="number" id="wv0010" name="wv0010" class="form-control" placeholder="Enter WV0010 Value" step="0.0000000000000001" required value="{{ request.form.wv0010 }}">
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <input type="number" id="cec" name="cec" class="form-control" placeholder="Enter CEC Value" step="0.00000000000000001" required value="{{ request.form.cec }}">
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <input type="number" id="nitrogen" name="nitrogen" class="form-control" placeholder="Enter Nitrogen Value" step="0.00000000000001" required value="{{ request.form.nitrogen }}">
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <input type="number" id="soc" name="soc" class="form-control" placeholder="Enter SOC Value" step="0.0000000000000001" required value="{{ request.form.soc }}">
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <input type="number" id="phh2o" name="phh2o" class="form-control" placeholder="Enter pH (H2O) Value" step="0.00000000000001" required value="{{ request.form.phh2o }}">
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <input type="number" id="tmin_oct_nov" name="tmin_oct_nov" class="form-control" placeholder="Enter Tmin Value (Oct-Nov)" step="0.00000000000001" required value="{{ request.form.tmin_oct_nov }}">
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <input type="number" id="tmax_jan_jun" name="tmax_jan_jun" class="form-control" placeholder="Enter Tmax Value (Jan-Jun)" step="0.0000000000000001" required value="{{ request.form.tmax_jan_jun }}">
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <input type="number" id="prec_oct_mar" name="prec_oct_mar" class="form-control" placeholder="Enter Precipitation (Oct-Mar)" step="0.000000000000001" required value="{{ request.form.prec_oct_mar }}">
+                              </div>
+                           </div>
+                           <button type="submit" class="btn btn-primary"> Prediction</button>
+                        </form>
+                        
+                        <!-- Add margin below the button -->
+                        <div style="margin-top: 20px;"></div>
+                        
+                        {% if predictions %}
+                        <h4>Prediction Results:</h4>
+                        <ul class="prediction-results">
+                            {% for prediction in predictions %}
+                            <li>
+                                Class: {{ prediction.class }} - Score: {{ prediction.score }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <div style="margin-top: 20px;"></div>
+                        <h4>Final Classification:</h4>
+                        <p>
+                           <strong>Class:</strong> <strong>{{ final_class.class }}</strong> - 
+                           <strong>Score:</strong> <strong>{{ final_class.score }}</strong>
+                       </p>
+                        {% endif %}
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         
+      <!-- Inner Header End -->
+      <!-- Footer Start -->
+      <footer>
+         <div class="container">
+            <p>&copy; All rights reserved.</p>
+         </div>
+      </footer>
+      <!-- Footer End -->
+   </div>
+   <!-- JavaScript Files -->
+   <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/prettyPhoto.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+</body>
+</html>

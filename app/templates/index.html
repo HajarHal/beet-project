@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+   <title>ECO HTML</title>
+   <!-- CSS FILES START -->
+   <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='css/color.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='css/prettyPhoto.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='css/all.min.css') }}" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+   <!-- CSS FILES End -->
+</head>
+
+<body>
+   <div class="wrapper">
+      <!--Header Start-->
+      <header class="header-style-2">
+         <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html"><img src="{{ url_for('static', filename='images/h2logo.png') }}" alt="Logo" style="width: 150px; height: auto;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav mr-auto">
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#about-us"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> About Us </a>
+                     
+                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="{{ url_for('prediction') }}">Get Predictions</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="{{ url_for('prediction') }}">Visualisations</a> </li>
+            
+         </nav>
+      </header>
+      
+      <div id="search">
+         <button type="button" class="close">×</button>
+         <form class="search-overlay-form">
+            <input type="search" value="" placeholder="type keyword(s) here" />
+            <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+         </form>
+      </div>
+      <!--Header End--> 
+
+      <!--Slider Start-->
+      <section id="home-slider" class="owl-carousel owl-theme wf100">
+         <div class="item">
+            <div class="slider-caption h2slider">
+               <div class="container">
+                  <strong>Cultivating Tomorrow's Sugar</strong>
+                  <h1>Land Insights for Cosumar!</h1>
+               </div>
+            </div>
+            <img src="{{ url_for('static', filename='images/bee.jpg') }}" alt=""> 
+         </div>
+         <div class="item">
+            <div class="slider-caption h2slider">
+               <div class="container">
+                  <strong>Unlocking Land Potential</strong>
+                  <h1>Your Partner in Beet Sugar Excellence!</h1>
+               </div>
+            </div>
+            <img src="{{ url_for('static', filename='images/beet.jpg') }}" alt=""> 
+         </div>
+         <div class="item">
+            <div class="slider-caption h2slider">
+               <div class="container">
+                  <strong>Empowering Cosumar's Future</strong>
+                  <h1>Smart Land Decisions!</h1>
+                   
+               </div>
+            </div>
+            <img src="{{ url_for('static', filename='images/beet2.jpg') }}" alt=""> 
+         </div>
+      </section>
+
+      <!--Service Area Start-->
+      <section class="services-area wf100">
+         <div class="container">
+            <ul>
+               <!-- Box 1 -->
+               <li>
+                  <a href="{{ url_for('visualisation') }}" class="btn">
+                     <div class="sinfo">
+                        <img src="{{ url_for('static', filename='images/map.png') }}" alt="Service Icon">
+                        <h6>Visualizations</h6>
+                        <p>Heatmap, diagrams</p>
+                     </div>
+                  </a>
+               </li>
+               <!-- Box 2 -->
+               <li>
+                  <a href="{{ url_for('prediction') }}" class="btn">
+                     <div class="sinfo">
+                        <img src="{{ url_for('static', filename='images/classification.png') }}" alt="Service Icon">
+                        <h6>Online Prediction</h6>
+                        <p>Make real-time prediction</p>
+                     </div>
+                  </a>
+               </li>
+               <!-- Box 3 -->
+               
+            </ul>
+         </div>
+      </section>
+      <!--Service Area End--> 
+
+      <!--About Section Start-->
+      <section id ="about_us" class="home2-about wf100 p100 gallery">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-5">
+                  <div class="video-img">
+                    
+                     <img src="{{ url_for('static', filename='images/h2about.png') }}" alt="About Us">
+                  </div>
+               </div>
+               <div class="col-md-7">
+                  <div class="h2-about-txt">
+                     <h3>About BeetLand Insights</h3>
+                     <h2>Discover optimal land for beet sugar cultivation.</h2>
+                     <p>Welcome to the Cosumar Land Suitability Assessment Tool. Our mission is to empower Cosumar to identify and evaluate new lands for beet sugar cultivation effectively. By harnessing advanced data analytics and machine learning, we provide detailed insights into land properties crucial for optimal sugar beet growth. Our interactive heatmap visualizations help Cosumar define regions and farmlands with the best environments for harvesting, facilitating informed decisions and strategic partnerships with landowners. Together, let's cultivate a sustainable future for beet sugar production!</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      
+      <!-- Footer Start -->
+<footer class="footer">
+   <div class="footer-top wf100">
+      <div class="container">
+         <div class="row">
+            <!-- Footer Columns -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+               <div class="footer-widget">
+                  <h4>About BeetLand Insights</h4>
+                  <p>Our mission is to empower sustainable agriculture through smart land evaluation and strategic partnerships.</p>
+                  <a href="#" class="lm">About us</a> 
+               </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+               <div class="footer-widget">
+                  <h4>Contacts</h4>
+                  <ul class="quick-links">
+                     <li><a href="https://www.linkedin.com/company/groupe-cosumar/?originalSubdomain=ma" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                     <li><a href="https://www.facebook.com/profile.php?id=100077889772987" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                     <li><a href="https://www.cosumar.co.ma/" target="_blank"><i class="fas fa-globe"></i> Website</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+            <div class="col-lg-6 col-md-12">
+               <div class="footer-widget">
+                  <h4>Additional Contact Information</h4>
+                  <ul class="quick-links">
+                     <li><a href="tel:+212660559444"><i class="fas fa-phone"></i> +212 660 559 444</a></li>
+                     <li><a href="#"><i class="fas fa-building"></i> SUTA: Khemis Oulad Ayad Km 46 – BP 80 – Par Beni Mellal</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+<!-- Footer End -->
+
+
+   <!-- JS Files Start --> 
+   <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script> 
+   <script src="{{ url_for('static', filename='js/jquery-migrate-1.4.1.min.js') }}"></script> 
+   <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script> 
+   <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script> 
+   <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script> 
+   <script src="{{ url_for('static', filename='js/jquery.prettyPhoto.js') }}"></script> 
+   <script src="{{ url_for('static', filename='js/isotope.min.js') }}"></script> 
+   <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+   
+   <!-- JS Files End -->
+</body>
+</html>
